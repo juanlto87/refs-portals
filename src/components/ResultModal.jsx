@@ -5,8 +5,7 @@ export default function ResultModal({ref, targetTime, timeRemaining, onReset}) {
   const score = Math.round((1 - timeRemaining / (targetTime * 1000)) * 100);
   return createPortal(
     <dialog ref={ref} className="result-modal">
-      <h2> {timeRemaining <= 0 ? "You Lost" : undefined}</h2>
-      <h2>Your Score: {score}</h2>
+      <h2> {timeRemaining <= 0 ? "You Lost!" : `Your Score ${score}`}</h2>
       <p>
         The target time was <strong>{targetTime} seconds.</strong>
       </p>
